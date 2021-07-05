@@ -1,4 +1,5 @@
 # ContactsApp
+Contacts app using NgXs, Angular material with CRUD features, authentication and othr cool features.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
