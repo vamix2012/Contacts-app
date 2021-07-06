@@ -1,0 +1,10 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <button [routerLink]="['/contacts/list']">Contacts List</button>
+    <button [routerLink]="['/contacts/favourites']">Favourites</button>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
