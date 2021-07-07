@@ -12,6 +12,7 @@ import { ContactsService } from '../../services/contacts.service';
 export class AddToFavContactComponent implements OnInit {
   contacts$: Observable<Contact[]>;
   loading: boolean = false;
+  clicked: boolean = false;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private contactsService: ContactsService,
@@ -23,10 +24,12 @@ export class AddToFavContactComponent implements OnInit {
   ngOnInit(): void {}
   addToFavorites(contact: Contact) {
     this.loading = true;
+    this.clicked = true;
     setTimeout(() => {
       contact.isFavourite = !contact.isFavourite;
       this.contactsService.updateContact(contact.id, contact);
       this.loading = false;
+      this.clicked = false;
     }, 1500);
   }
 }

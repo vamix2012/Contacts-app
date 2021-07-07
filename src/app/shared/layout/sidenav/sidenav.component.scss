@@ -1,4 +1,4 @@
-.example-container {
+.sideNavcontainer {
   width : 100%;
   height: calc(100% - 64px);
 }
@@ -6,4 +6,39 @@
 mat-drawer-content {
   position: relative;
   padding : 16px;
+}
+
+.sideNavLinks {
+  ul {
+    width               : 100%;
+    padding-inline-start: 0;
+    margin-left         : 8px;
+    margin-right        : 8px;
+  }
+
+
+
+  li {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-around;
+    height         : 24px;
+    width          : 150px;
+    margin-top     : 42px;
+    color          : #3f51b5;
+    padding        : 16px;
+
+    &:hover {
+      background-color: #F4F2FF;
+      border-radius   : 5px;
+      color           : #ff4081;
+      cursor          : pointer;
+    }
+  }
+}
+
+.selected {
+  background-color: #F4F2FF;
+  border-radius   : 5px;
+  color           : #83328E;
 }

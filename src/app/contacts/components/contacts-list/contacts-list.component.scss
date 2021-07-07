@@ -2,27 +2,27 @@ table {
   width: 100%;
 }
 
-#customers {
+#contacts {
   font-family    : Arial, Helvetica, sans-serif;
   border-collapse: collapse;
 
 }
 
-#customers td,
-#customers th {
+#contacts td,
+#contacts th {
   border : 1px solid #ddd;
   padding: 8px;
 }
 
-#customers tr:nth-child(even) {
+#contacts tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#customers tr:hover {
+#contacts tr:hover {
   background-color: #ddd;
 }
 
-#customers th {
+#contacts th {
   padding-top     : 12px;
   padding-bottom  : 12px;
   text-align      : left;
@@ -31,8 +31,13 @@ table {
 }
 
 td:last-child {
-  display        : flex;
-  justify-content: space-around;
+  mat-icon {
+    margin-left: 16px;
+  }
+}
+
+.favRow {
+  text-align: center;
 }
 
 
@@ -46,4 +51,13 @@ td:last-child {
   position: absolute;
   right   : 32px;
   bottom  : 64px
+}
+
+.search-form {
+  min-width: 150px;
+  width    : 100%;
+}
+
+.full-width {
+  width: 50%;
 }

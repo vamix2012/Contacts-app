@@ -1,3 +1,5 @@
+<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
 <h3>Add contacts to favourites</h3>
 
 <table>
@@ -6,8 +8,9 @@
       <td>{{ contact.firstName}}</td>
       <td>{{ contact.lastName}}</td>
       <td>
-        <app-is-favourite class="favBtn" (click)="addToFavorites(contact)" [isFavourite]="contact.isFavourite">
-        </app-is-favourite>
+        <button mat-raised-button color="primary" (click)="addToFavorites(contact)" [disabled]="clicked">Add</button>
+        <!-- <app-is-favourite class="favBtn" [isFavourite]="contact.isFavourite">
+        </app-is-favourite> -->
       </td>
     </tr>
   </ng-container>

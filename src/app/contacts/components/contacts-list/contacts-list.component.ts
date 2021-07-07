@@ -13,7 +13,8 @@ import { DeleteContactComponent } from '../delete-contact/delete-contact.compone
   styleUrls: ['./contacts-list.component.scss'],
 })
 export class ContactsListComponent implements OnInit {
-  contacts$!: Observable<Contact[]>;
+  contacts!: Contact[];
+  filteredContacts: Contact[];
 
   constructor(
     private contactService: ContactsService,
@@ -21,7 +22,12 @@ export class ContactsListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.contacts$ = this.contactService.getAllContacts();
+    this.contactService
+      .getAllContacts()
+      .subscribe(
+        (contact) =>
+          (this.filteredContacts = this.contacts = contact as Contact[])
+      );
   }
 
   addToFavorites(contact: Contact) {
@@ -29,10 +35,10 @@ export class ContactsListComponent implements OnInit {
     this.contactService.updateContact(contact.id, contact);
   }
 
-  openDeleteDialog(id: string) {
+  openDeleteDialog(contact) {
     this.dialog.open(DeleteContactComponent, {
       data: {
-        id: id,
+        contact: contact,
       },
     });
   }
@@ -47,5 +53,15 @@ export class ContactsListComponent implements OnInit {
 
   addContact() {
     this.dialog.open(AddContactComponent);
+  }
+
+  searchContact(value) {
+    this.filteredContacts = value
+      ? this.contacts.filter(
+          (contact) =>
+            contact.lastName.toLowerCase().includes(value.toLowerCase()) ||
+            contact.firstName.toLowerCase().includes(value.toLowerCase())
+        )
+      : this.contacts;
   }
 }

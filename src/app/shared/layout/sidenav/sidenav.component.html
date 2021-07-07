@@ -1,7 +1,14 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>
-    <button [routerLink]="['/contacts/list']">Contacts List</button>
-    <button [routerLink]="['/contacts/favourites']">Favourites</button>
+<mat-drawer-container class="sideNavcontainer">
+  <mat-drawer mode="side" class="sideNavLinks" opened>
+
+    <ul>
+      <li routerLinkActive="selected" routerLink="/contacts/list">
+        <mat-icon>contacts</mat-icon>Contacts
+      </li>
+      <li routerLinkActive="selected" routerLink="/contacts/favourites">
+        <mat-icon>favorite</mat-icon>Favourites
+      </li>
+    </ul>
   </mat-drawer>
   <mat-drawer-content>
 
