@@ -1,0 +1,11 @@
+<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+<h3>Delete Contact</h3>
+
+<h4>Are you shure you want to delete this contact?</h4>
+
+<div class="dialogBtns">
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+  <button (click)="deleteContact() ;clicked = true" [disabled]="clicked" mat-raised-button
+    color="primary">Delete</button>
+</div>

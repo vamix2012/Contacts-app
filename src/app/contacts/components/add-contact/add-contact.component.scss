@@ -1,0 +1,30 @@
+form {
+  display       : flex;
+  flex-direction: column;
+
+  mat-form-field {
+    margin-bottom: 32px;
+  }
+}
+
+div {
+  width: inherit;
+}
+
+.fullNameWrap {
+  mat-form-field {
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+.dialogBtns {
+  display        : flex;
+  justify-content: right;
+
+  button {
+    margin-left: 32px;
+  }
+
+}

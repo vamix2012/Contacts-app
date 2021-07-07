@@ -1,0 +1,40 @@
+<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+<h3>Add Contact</h3>
+
+<form [formGroup]="addContactForm">
+  <div class="fullNameWrap">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input type="text" matInput placeholder="Enter your first name" formControlName="firstName">
+      <mat-error *ngIf="firstName.invalid && firstName.touched">{{ getFirstNameErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input type="text" matInput placeholder="Enter your last name" formControlName="lastName">
+      <mat-error *ngIf="lastName.invalid && lastName.touched">{{ getLastNameErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+40 &nbsp;</span>
+    <input mask="000 000 000" type="tel" matInput placeholder="7xx-xxx-xxx" formControlName="phoneNo">
+    <mat-error *ngIf="phoneNo.invalid && phoneNo.touched">{{ getPhoneErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Enter your email" formControlName="email">
+    <mat-error *ngIf="email.invalid && email.touched">{{ getEmailErrorMessage() }}</mat-error>
+  </mat-form-field>
+
+</form>
+
+
+<div class="dialogBtns">
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+  <button (click)="addContact(); clicked = true;" [disabled]="addContactForm.invalid || clicked" mat-raised-button
+    color="primary" #addBtn>Add</button>
+</div>

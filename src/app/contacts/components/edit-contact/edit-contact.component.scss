@@ -1,0 +1,24 @@
+.formContainer {
+  display       : flex;
+  flex-direction: column;
+}
+
+
+
+.fullNameWrap {
+  mat-form-field {
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+.dialogBtns {
+  display        : flex;
+  justify-content: right;
+
+  button {
+    margin-left: 32px;
+  }
+
+}

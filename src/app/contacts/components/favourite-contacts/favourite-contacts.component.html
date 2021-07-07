@@ -1,0 +1,23 @@
+<h2>Favourites</h2>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+  </tr>
+  <ng-container *ngFor="let contact of contacts$ | async index as i">
+    <tr *ngIf="contact.isFavourite">
+      <td>{{ contact.firstName}}</td>
+      <td>{{ contact.lastName}}</td>
+      <td>{{ contact.phoneNo}}</td>
+      <td>{{ contact.email}}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<button (click)="addContactsToFav()" mat-fab color="primary" matTooltipPosition="left" matTooltipHideDelay="2000"
+  matTooltip="Add contacts to favourites" class="addBtn">
+  <mat-icon>add</mat-icon>
+</button>

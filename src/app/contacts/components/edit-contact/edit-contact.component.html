@@ -1,0 +1,35 @@
+<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+<h3>Edit Contact</h3>
+
+<div class="formContainer">
+
+  <div class="fullNameWrap">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input [(ngModel)]="contact.firstName" type="text" matInput placeholder="Enter your first name" #firstName>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input [(ngModel)]="contact.lastName" type="text" matInput placeholder="Enter your last name" #lastName>
+    </mat-form-field>
+  </div>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+40 &nbsp;</span>
+    <input [(ngModel)]="contact.phoneNo" mask="000 000 000" type="tel" matInput placeholder="7xx-xxx-xxx" #phone>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input [(ngModel)]="contact.email" type="email" matInput placeholder="Enter your email" #email>
+  </mat-form-field>
+</div>
+<div class="dialogBtns">
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+  <button (click)="updateContact(contact.id, contact)" [disabled]="phone.value.length < 11 && lastName.value.length < 3"
+    mat-raised-button color="primary">Update</button>
+</div>

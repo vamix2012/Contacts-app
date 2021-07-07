@@ -1,0 +1,31 @@
+<h2>Contacts</h2>
+
+
+<table id="customers">
+  <tr>
+    <th>Position</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Options</th>
+  </tr>
+  <tr *ngFor="let contact of contacts$ | async index as i">
+    <td>{{ i }}</td>
+    <td>{{ contact.firstName}}</td>
+    <td>{{ contact.lastName}}</td>
+    <td>+40 &nbsp;{{ contact.phoneNo | mask: '000 000 000'}}</td>
+    <td>{{ contact.email}}</td>
+    <td>
+      <app-is-favourite class="favBtn" (click)="addToFavorites(contact)" [isFavourite]="contact.isFavourite">
+      </app-is-favourite>
+      <mat-icon class="editBtn" (click)="editContact(contact)">edit</mat-icon>
+      <mat-icon class="deleteBtn" (click)="openDeleteDialog(contact.id)">delete</mat-icon>
+    </td>
+  </tr>
+</table>
+
+<button (click)="addContact()" mat-fab color="primary" matTooltipPosition="left" matTooltipHideDelay="2000"
+  matTooltip="Add new Contact" class="addBtn">
+  <mat-icon>add</mat-icon>
+</button>
