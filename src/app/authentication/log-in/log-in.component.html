@@ -1,0 +1,28 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Log In</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" #email>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" #password>
+        </mat-form-field>
+      </mat-card-content>
+      <div class="buttons">
+        <button mat-raised-button color="primary" class="btn-block" (click)="onSignIn(email.value, password.value)">Log
+          In</button>
+        <button mat-raised-button color="accent" class="btn-block" routerLink="/auth/signup">Sign Up for free</button>
+      </div>
+    </form>
+    <mat-error>{{ errorMessage }}</mat-error>
+    <div></div>
+  </mat-card>
+
+</div>

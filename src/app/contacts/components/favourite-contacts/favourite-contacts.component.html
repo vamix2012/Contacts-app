@@ -1,17 +1,18 @@
 <h2>Favourites</h2>
-
-<table>
+<h3 *ngIf="contacts.length < 1">No contacts in the list yet, to add new contact go to Contacts.
+</h3>
+<table *ngIf="contacts.length > 0">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Phone Number</th>
     <th>Email</th>
   </tr>
-  <ng-container *ngFor="let contact of contacts$ | async index as i">
+  <ng-container *ngFor="let contact of contacts; index as i">
     <tr *ngIf="contact.isFavourite">
       <td>{{ contact.firstName}}</td>
       <td>{{ contact.lastName}}</td>
-      <td>{{ contact.phoneNo}}</td>
+      <td>+40{{ contact.phoneNo}}</td>
       <td>{{ contact.email}}</td>
     </tr>
   </ng-container>

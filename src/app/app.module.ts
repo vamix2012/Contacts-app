@@ -1,3 +1,5 @@
+import { MaterialModule } from './material.module';
+import { AuthenticationService } from './authentication/services/authentication.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,14 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
 import { ContactState } from './contacts/state/contact.state';
+import { NgxsActionsExecutingModule } from '@ngxs-labs/actions-executing';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -33,14 +30,18 @@ import { ContactState } from './contacts/state/contact.state';
     NgxsModule.forRoot([ContactState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
-    MatToolbarModule,
-    MatSidenavModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatDividerModule,
+    NgxsActionsExecutingModule.forRoot(),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyBsDuVlzXwbDzlMmdmUPYlvM78HVeRMTDI',
+      authDomain: 'contacts-app-auth.firebaseapp.com',
+      projectId: 'contacts-app-auth',
+      storageBucket: 'contacts-app-auth.appspot.com',
+      messagingSenderId: '390286762127',
+      appId: '1:390286762127:web:c7ff15301fcb38fbebd0fa',
+    }),
+    MaterialModule,
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

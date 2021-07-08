@@ -11,7 +11,7 @@ import { AddToFavContactComponent } from '../add-to-fav-contact/add-to-fav-conta
   styleUrls: ['./favourite-contacts.component.scss'],
 })
 export class FavouriteContactsComponent implements OnInit {
-  contacts$!: Observable<Contact[]>;
+  contacts: Contact[];
 
   constructor(
     private contactService: ContactsService,
@@ -19,7 +19,9 @@ export class FavouriteContactsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.contacts$ = this.contactService.getAllContacts();
+    this.contactService
+      .getAllContacts()
+      .subscribe((contact) => (this.contacts = contact as Contact[]));
   }
 
   addContactsToFav() {

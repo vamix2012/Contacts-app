@@ -4,16 +4,16 @@
 }
 
 mat-drawer-content {
-  position: relative;
-  padding : 16px;
+  padding: 16px;
 }
 
 .sideNavLinks {
   ul {
-    width               : 100%;
+    width               : 95%;
     padding-inline-start: 0;
-    margin-left         : 8px;
-    margin-right        : 8px;
+    margin-left         : 10px;
+    margin-right        : 10px;
+
   }
 
 
@@ -24,9 +24,10 @@ mat-drawer-content {
     justify-content: space-around;
     height         : 24px;
     width          : 150px;
-    margin-top     : 42px;
+    margin-top     : 32px;
     color          : #3f51b5;
     padding        : 16px;
+
 
     &:hover {
       background-color: #F4F2FF;

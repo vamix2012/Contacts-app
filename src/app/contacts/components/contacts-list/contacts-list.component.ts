@@ -2,7 +2,7 @@ import { AddContactComponent } from '../add-contact/add-contact.component';
 import { ContactsService } from '../../services/contacts.service';
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../models/contact.model';
-import { Observable } from 'rxjs';
+
 import { MatDialog } from '@angular/material/dialog';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
 import { DeleteContactComponent } from '../delete-contact/delete-contact.component';
