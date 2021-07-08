@@ -15,7 +15,7 @@ export class AuthenticationService {
       .then((res) => {
         this.isLogedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
-        window.location.href = 'list';
+        window.location.href = '';
       });
   }
 
