@@ -15,7 +15,7 @@ export class AuthenticationService {
       .then((res) => {
         this.isLogedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
-        this.router.navigate(['list']);
+        window.location.href = 'list';
       });
   }
 
