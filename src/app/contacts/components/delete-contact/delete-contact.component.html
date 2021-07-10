@@ -1,10 +1,15 @@
-<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="dialogWrap">
 
-<h3>Delete Contact</h3>
+  <mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<h4>Are you shure you want to delete {{contact.firstName}} {{ contact.lastName }}?</h4>
+  <h3>Delete Contact</h3>
 
-<div class="dialogBtns">
-  <button mat-raised-button mat-dialog-close color="warn" color="primary">Cancel</button>
-  <button (click)="deleteContact() ;clicked = true" [disabled]="clicked" mat-raised-button color="warn">Delete</button>
+  <h4>Are you shure you want to delete {{contact.firstName}} {{ contact.lastName }}?</h4>
+
+  <div class="dialogBtns">
+    <button mat-raised-button mat-dialog-close color="warn" color="primary">Cancel</button>
+    <button (click)="deleteContact() ;clicked = true" [disabled]="clicked" mat-raised-button
+      color="warn">Delete</button>
+  </div>
+
 </div>

@@ -15,6 +15,7 @@ import { NgxsModule } from '@ngxs/store';
 import { ContactState } from './contacts/state/contact.state';
 import { NgxsActionsExecutingModule } from '@ngxs-labs/actions-executing';
 import { AngularFireModule } from '@angular/fire';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AngularFireModule } from '@angular/fire';
       appId: '1:390286762127:web:c7ff15301fcb38fbebd0fa',
     }),
     MaterialModule,
+    OrderModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent],

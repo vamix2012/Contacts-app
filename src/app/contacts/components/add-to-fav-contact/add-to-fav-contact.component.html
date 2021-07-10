@@ -1,20 +1,23 @@
-<mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="dialogWrap">
+  <mat-progress-bar class="progressBar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<h3>Add contacts to favourites</h3>
+  <h3>Add contacts to favourites</h3>
 
-<table>
-  <ng-container *ngFor="let contact of contacts$ | async">
-    <tr *ngIf="!contact.isFavourite">
-      <td>{{ contact.firstName}}</td>
-      <td>{{ contact.lastName}}</td>
-      <td>
-        <button mat-raised-button color="primary" (click)="addToFavorites(contact)" [disabled]="clicked">Add</button>
-        <!-- <app-is-favourite class="favBtn" [isFavourite]="contact.isFavourite">
+  <table>
+    <ng-container *ngFor="let contact of contacts$ | async">
+      <tr *ngIf="!contact.isFavourite">
+        <td>{{ contact.firstName}}</td>
+        <td>{{ contact.lastName}}</td>
+        <td>
+          <button mat-raised-button color="primary" (click)="addToFavorites(contact)" [disabled]="clicked">Add</button>
+          <!-- <app-is-favourite class="favBtn" [isFavourite]="contact.isFavourite">
         </app-is-favourite> -->
-      </td>
-    </tr>
-  </ng-container>
-</table>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
 
 
-<button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+
+</div>

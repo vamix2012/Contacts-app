@@ -13,8 +13,8 @@ export class AuthenticationService {
     await this.firebaseAuth
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        this.isLogedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
+        this.isLogedIn = true;
         window.location.href = '';
       });
   }
@@ -26,7 +26,7 @@ export class AuthenticationService {
         res.user.updateProfile({
           displayName: displayName,
         });
-        this.router.navigate(['auth/login']);
+        this.signIn(email, password);
       });
   }
 

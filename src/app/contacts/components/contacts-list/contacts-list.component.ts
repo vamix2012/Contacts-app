@@ -13,7 +13,7 @@ import { DeleteContactComponent } from '../delete-contact/delete-contact.compone
   styleUrls: ['./contacts-list.component.scss'],
 })
 export class ContactsListComponent implements OnInit {
-  contacts!: Contact[];
+  contacts: Contact[];
   filteredContacts: Contact[];
 
   constructor(
@@ -60,7 +60,9 @@ export class ContactsListComponent implements OnInit {
       ? this.contacts.filter(
           (contact) =>
             contact.lastName.toLowerCase().includes(value.toLowerCase()) ||
-            contact.firstName.toLowerCase().includes(value.toLowerCase())
+            contact.firstName.toLowerCase().includes(value.toLowerCase()) ||
+            contact.email.toLowerCase().includes(value.toLowerCase()) ||
+            contact.phoneNo.toString().includes(value.toLowerCase())
         )
       : this.contacts;
   }

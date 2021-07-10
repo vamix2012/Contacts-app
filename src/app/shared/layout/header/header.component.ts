@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('user'))
       this.currentUser = JSON.parse(localStorage.getItem('user'));
+    else this.currentUser = '';
   }
 
   onLogout() {

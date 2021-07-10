@@ -2,7 +2,8 @@
 
 <form class="search-form">
   <mat-form-field class="full-width" appearance="fill">
-    <input matInput #query (keyup)="searchContact(query.value)" placeholder="Search by first or last name">
+    <input matInput #query (keyup)="searchContact(query.value)"
+      placeholder="Search by First or Last name, Phone number, Email">
   </mat-form-field>
 </form>
 
@@ -12,7 +13,6 @@
 
 <table *ngIf="contacts.length > 0" id="contacts">
   <tr>
-    <th>Position</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Phone Number</th>
@@ -20,10 +20,10 @@
     <th class="favRow">Favourite</th>
     <th>Options</th>
   </tr>
-  <tr *ngFor="let contact of filteredContacts; index as i">
-    <td>{{ i }}</td>
-    <td>{{ contact.firstName}}</td>
-    <td>{{ contact.lastName}}</td>
+  <tr *ngFor="let contact of filteredContacts">
+
+    <td>{{ contact.firstName }}</td>
+    <td>{{ contact.lastName }}s </td>
     <td>+40 &nbsp;{{ contact.phoneNo | mask: '000 000 000'}}</td>
     <td>{{ contact.email}}</td>
     <td class="favRow">

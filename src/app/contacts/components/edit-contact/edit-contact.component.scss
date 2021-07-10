@@ -22,3 +22,16 @@
   }
 
 }
+
+
+.dialogWrap {
+  position: relative;
+
+  mat-progress-bar {
+    position: absolute;
+    left    : -24px;
+    top     : -42px;
+    right   : -24px;
+    width   : calc(100% + 48px);
+  }
+}
