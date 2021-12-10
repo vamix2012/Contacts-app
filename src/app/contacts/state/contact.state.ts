@@ -8,60 +8,10 @@ import { patch, updateItem } from '@ngxs/store/operators';
 export class ContactStateModel {
   contacts!: Contact[];
 }
-
 @State<ContactStateModel>({
   name: 'contacts',
   defaults: {
-    contacts: [
-      {
-        firstName: 'Johny',
-        lastName: 'Bravo',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg1',
-        email: 'email1@gmail.com',
-        isFavourite: false,
-      },
-      {
-        firstName: 'Alex',
-        lastName: 'Gordon',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg2',
-        email: 'email2@gmail.com',
-        isFavourite: true,
-      },
-      {
-        firstName: 'Johny',
-        lastName: 'Bravo',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg3',
-        email: 'email3@gmail.com',
-        isFavourite: false,
-      },
-      {
-        firstName: 'Edi',
-        lastName: 'Kui',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg4',
-        email: 'email4@gmail.com',
-        isFavourite: true,
-      },
-      {
-        firstName: 'Adi',
-        lastName: 'Moruz',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg5',
-        email: 'email5@gmail.com',
-        isFavourite: true,
-      },
-      {
-        firstName: 'Ionata',
-        lastName: 'Bravosu',
-        phoneNo: 712374735,
-        id: 'rrerf-er565dfgsgsdfg6',
-        email: 'email6@gmail.com',
-        isFavourite: false,
-      },
-    ],
+    contacts: [],
   },
 })
 @Injectable()

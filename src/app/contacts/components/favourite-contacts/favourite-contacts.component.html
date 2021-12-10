@@ -12,7 +12,7 @@
     <tr *ngIf="contact.isFavourite">
       <td>{{ contact.firstName}}</td>
       <td>{{ contact.lastName}}</td>
-      <td>+40{{ contact.phoneNo}}</td>
+      <td>{{ contact.phoneNo | mask: '00000 0000000'}}</td>
       <td>{{ contact.email}}</td>
     </tr>
   </ng-container>

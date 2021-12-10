@@ -16,6 +16,7 @@ import { ContactState } from './contacts/state/contact.state';
 import { NgxsActionsExecutingModule } from '@ngxs-labs/actions-executing';
 import { AngularFireModule } from '@angular/fire';
 import { OrderModule } from 'ngx-order-pipe';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { OrderModule } from 'ngx-order-pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxsModule.forRoot([ContactState]),
+    NgxsStoragePluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     NgxsActionsExecutingModule.forRoot(),

@@ -23,8 +23,9 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password" [type]=" hide ? 'password' : 'text'" formControlName="password">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+          <input matInput (keyup.enter)="onSignUp()" placeholder="Password" [type]=" hide ? 'password' : 'text'"
+            formControlName="password">
+          <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
             [attr.aria-pressed]="hide">
             <mat-icon style="font-size: 20px;">
               {{hide ? 'visibility_off' : 'visibility'}}

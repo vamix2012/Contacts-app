@@ -37,11 +37,13 @@ export class LogInComponent implements OnInit {
     });
   }
   onSignIn() {
-    this.authService
-      .signIn(this.credentials.email, this.credentials.password)
-      .catch((err) => {
-        this.errorMessage = err.message;
-      });
+    if (!this.loginForm.invalid) {
+      this.authService
+        .signIn(this.credentials.email, this.credentials.password)
+        .catch((err) => {
+          this.errorMessage = err.message;
+        });
+    }
   }
 
   getEmailErrorMessage() {

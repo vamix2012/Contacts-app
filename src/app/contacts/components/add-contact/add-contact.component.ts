@@ -25,7 +25,6 @@ export class AddContactComponent implements OnInit {
 
   addContact() {
     this.loading = true;
-
     setTimeout(() => {
       this.contact.id = uuidv4();
       this.store.dispatch(new AddContact(this.contact));

@@ -20,8 +20,7 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Telephone</mat-label>
-      <span matPrefix>+40 &nbsp;</span>
-      <input mask="000 000 000" type="tel" matInput placeholder="xxx-xxx-xxx" formControlName="phoneNo">
+      <input mask="00000 0000000" type="tel" matInput placeholder="0151x-xxxxxxx" formControlName="phoneNo">
       <mat-error *ngIf="phoneNo.invalid && phoneNo.touched">{{ getPhoneErrorMessage()}}</mat-error>
     </mat-form-field>
 

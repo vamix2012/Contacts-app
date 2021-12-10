@@ -33,4 +33,9 @@ export class ContactsService {
   delContact(id: string) {
     return this.store.dispatch(new RemoveContact(id));
   }
+
+  updateDB() {
+    let contacts = JSON.stringify(this.getAllContacts());
+    return localStorage.setItem('contacts', contacts);
+  }
 }

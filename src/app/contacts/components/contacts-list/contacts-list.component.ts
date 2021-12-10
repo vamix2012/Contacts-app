@@ -22,12 +22,9 @@ export class ContactsListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.contactService
-      .getAllContacts()
-      .subscribe(
-        (contact) =>
-          (this.filteredContacts = this.contacts = contact as Contact[])
-      );
+    this.contactService.getAllContacts().subscribe((contact) => {
+      this.filteredContacts = this.contacts = contact as Contact[];
+    });
   }
 
   addToFavorites(contact: Contact) {

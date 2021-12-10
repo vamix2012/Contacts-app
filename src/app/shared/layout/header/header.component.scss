@@ -3,4 +3,8 @@ mat-toolbar {
   color           : white;
   display         : flex;
   justify-content : space-between;
+
+  button {
+    margin-left: 16px;
+  }
 }

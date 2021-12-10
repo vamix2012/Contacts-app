@@ -1,7 +1,7 @@
 export interface Contact {
   firstName: string;
   lastName: string;
-  phoneNo: number;
+  phoneNo: string;
   id: string;
   email: string;
   isFavourite: boolean;

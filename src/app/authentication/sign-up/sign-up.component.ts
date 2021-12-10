@@ -40,17 +40,21 @@ export class SignUpComponent implements OnInit {
     });
   }
   onSignUp() {
-    let fullName =
-      this.signupCredentials.firstName + ' ' + this.signupCredentials.lastName;
-    this.authService
-      .signUp(
-        this.signupCredentials.email,
-        this.signupCredentials.password,
-        fullName
-      )
-      .catch((err) => {
-        this.errorMessage = err.message;
-      });
+    if (!this.signupForm.invalid) {
+      let fullName =
+        this.signupCredentials.firstName +
+        ' ' +
+        this.signupCredentials.lastName;
+      this.authService
+        .signUp(
+          this.signupCredentials.email,
+          this.signupCredentials.password,
+          fullName
+        )
+        .catch((err) => {
+          this.errorMessage = err.message;
+        });
+    }
   }
 
   getEmailErrorMessage() {
